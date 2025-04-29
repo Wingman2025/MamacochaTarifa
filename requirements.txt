@@ -1,0 +1,3 @@
+# Este archivo es para dependencias de Python.
+# Actualmente tu proyecto usa Node.js, por lo que no se requieren dependencias aquí.
+# Si en el futuro agregas scripts de Python, indícalos aquí.
