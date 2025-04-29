@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mamacocha Tarifa Watersports</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- ScrollReveal -->
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <link rel="stylesheet" href="https://unpkg.com/glightbox/dist/css/glightbox.min.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+  <style>
+    body { font-family: 'Open Sans', sans-serif; }
+    h1,h2,h3,h4 { font-family: 'Montserrat', sans-serif; }
+    /* Wave SVG separators */
+    .wave { position: relative; }
+    .wave svg { display: block; width: calc(100% + 1.3px); }
+  </style>
+</head>
+<body class="bg-white text-gray-800 leading-relaxed">
+  <!-- Header -->
+  <header class="fixed w-full bg-white bg-opacity-75 backdrop-blur z-50">
+    <div class="container mx-auto flex items-center justify-between py-4 px-6">
+      <a href="#inicio" class="text-2xl font-bold text-teal-500">Mamacocha Tarifa Watersports</a>
+      <nav class="hidden md:flex space-x-6">
+        <a href="#inicio" class="hover:text-teal-500">Inicio</a>
+        <a href="#sobre" class="hover:text-teal-500">Sobre</a>
+        <a href="#servicios" class="hover:text-teal-500">Servicios</a>
+        <a href="#galeria" class="hover:text-teal-500">Galería</a>
+        <a href="#testimonios" class="hover:text-teal-500">Testimonios</a>
+        <a href="#precios" class="hover:text-teal-500">Precios</a>
+        <a href="#reserva" class="hover:text-teal-500">Reserva</a>
+        <a href="#contacto" class="hover:text-teal-500">Contacto</a>
+      </nav>
+      <a href="#reserva" class="hidden md:inline-block bg-teal-500 text-white px-5 py-2 rounded-lg hover:bg-teal-600 transition">Reserva tu clase</a>
+      <button class="md:hidden text-gray-700 focus:outline-none" id="btn-menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="inicio" class="min-h-screen bg-cover bg-center" style="background-image: url('https://source.unsplash.com/1600x900/?kitesurf,beach');">
+    <div class="bg-gradient-to-b from-teal-500/60 to-white/20 min-h-screen flex items-center justify-center">
+      <div class="text-center px-4">
+        <h1 class="text-5xl md:text-7xl font-bold text-white drop-shadow-lg">Clases de Kitesurf, Wingfoil &amp; Surf</h1>
+        <p class="mt-4 text-xl text-white">Vive la experiencia de Tarifa con los mejores instructores</p>
+        <a href="#reserva" class="mt-6 inline-block bg-white text-teal-600 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition">Empieza hoy</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre Mamacocha -->
+  <section id="sobre" class="py-16">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-4 text-teal-500">Sobre Mamacocha</h2>
+      <p class="max-w-2xl mx-auto mb-8">En Mamacocha fusionamos pasión, seguridad y diversión para ofrecerte clases de kitesurf, wingfoil y surf en el paraíso de Tarifa.</p>
+      <div class="flex justify-center space-x-8">
+        <div class="text-center">
+          <div class="text-5xl">🏄‍♀️</div>
+          <p class="mt-2 font-semibold">Surf</p>
+        </div>
+        <div class="text-center">
+          <div class="text-5xl">🪁</div>
+          <p class="mt-2 font-semibold">Kitesurf</p>
+        </div>
+        <div class="text-center">
+          <div class="text-5xl">🌊</div>
+          <p class="mt-2 font-semibold">Wingfoil</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section id="servicios" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold mb-8 text-center text-teal-500">Nuestros Servicios</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Card Kitesurf -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <img src="https://source.unsplash.com/600x400/?kitesurf" alt="Kitesurf" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold mb-2">Kitesurf</h3>
+            <p>Niveles: Iniciación | Intermedio | Avanzado</p>
+            <p>Duración: 2h por sesión</p>
+          </div>
+        </div>
+        <!-- Card Wingfoil -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <img src="https://source.unsplash.com/600x400/?wingfoil" alt="Wingfoil" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold mb-2">Wingfoil</h3>
+            <p>Niveles: Iniciación | Intermedio</p>
+            <p>Duración: 2h por sesión</p>
+          </div>
+        </div>
+        <!-- Card Surf -->
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+          <img src="https://source.unsplash.com/600x400/?surf" alt="Surf" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold mb-2">Surf</p>
+            <p>Niveles: Iniciación | Intermedio</p>
+            <p>Duración: 2h por sesión</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galería -->
+  <section id="galeria" class="py-16 wave">
+    <div class="wave">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 80"><path fill="#F4D29B" fill-opacity="1" d="M0,32L48,58.7C96,85,192,139,288,154.7C384,171,480,149,576,138.7C672,128,768,128,864,133.3C960,139,1056,149,1152,149.3C1248,149,1344,139,1392,133.3L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
+    </div>
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold mb-8 text-center text-teal-500">Galería</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <a href="https://source.unsplash.com/1200x900/?beach,tarifa" class="glightbox">
+          <img src="https://source.unsplash.com/400x300/?beach,tarifa" class="w-full h-48 object-cover rounded-lg" alt="">
+        </a>
+        <a href="https://source.unsplash.com/1200x900/?kite,tarifa" class="glightbox">
+          <img src="https://source.unsplash.com/400x300/?kite,tarifa" class="w-full h-48 object-cover rounded-lg" alt="">
+        </a>
+        <a href="https://source.unsplash.com/1200x900/?surf,tarifa" class="glightbox">
+          <img src="https://source.unsplash.com/400x300/?surf,tarifa" class="w-full h-48 object-cover rounded-lg" alt="">
+        </a>
+        <a href="https://source.unsplash.com/1200x900/?wingfoil,tarifa" class="glightbox">
+          <img src="https://source.unsplash.com/400x300/?wingfoil,tarifa" class="w-full h-48 object-cover rounded-lg" alt="">
+        </a>
+        <a href="https://source.unsplash.com/1200x900/?ocean,tarifa" class="glightbox">
+          <img src="https://source.unsplash.com/400x300/?ocean,tarifa" class="w-full h-48 object-cover rounded-lg" alt="">
+        </a>
+        <a href="https://source.unsplash.com/1200x900/?sunset,beach" class="glightbox">
+          <img src="https://source.unsplash.com/400x300/?sunset,beach" class="w-full h-48 object-cover rounded-lg" alt="">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonios -->
+  <section id="testimonios" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-8 text-teal-500">Testimonios</h2>
+      <div class="swiper-container max-w-xl mx-auto">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide p-6 bg-white rounded-lg shadow-lg">
+            <p class="italic">"¡La mejor experiencia en Tarifa! Instructores muy profesionales y divertidos."</p>
+            <p class="mt-4 font-semibold">— María G.</p>
+          </div>
+          <div class="swiper-slide p-6 bg-white rounded-lg shadow-lg">
+            <p class="italic">"Gran servicio y ambiente increíble. ¡Repetiré seguro!"</p>
+            <p class="mt-4 font-semibold">— Juan P.</p>
+          </div>
+        </div>
+        <div class="swiper-pagination mt-4"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Precios & Paquetes -->
+  <section id="precios" class="py-16">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold mb-8 text-center text-teal-500">Precios &amp; Paquetes</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="border rounded-lg p-6 text-center">
+          <h3 class="text-2xl font-semibold mb-4">Básico</h3>
+          <p class="text-3xl font-bold mb-4">€60</p>
+          <ul class="mb-6">
+            <li>1 sesión (2h)</li>
+            <li>Material incluido</li>
+            <li>Seguro básico</li>
+          </ul>
+          <a href="#reserva" class="inline-block bg-teal-500 text-white px-5 py-2 rounded-lg hover:bg-teal-600 transition">Reservar</a>
+        </div>
+        <div class="border-2 border-teal-500 rounded-lg p-6 text-center">
+          <h3 class="text-2xl font-semibold mb-4">Intensivo</h3>
+          <p class="text-3xl font-bold mb-4">€180</p>
+          <ul class="mb-6">
+            <li>3 sesiones (2h c/u)</li>
+            <li>Material premium</li>
+            <li>Seguro completo</li>
+          </ul>
+          <a href="#reserva" class="inline-block bg-teal-500 text-white px-5 py-2 rounded-lg hover:bg-teal-600 transition">Reservar</a>
+        </div>
+        <div class="border rounded-lg p-6 text-center">
+          <h3 class="text-2xl font-semibold mb-4">Premium</h3>
+          <p class="text-3xl font-bold mb-4">€300</p>
+          <ul class="mb-6">
+            <li>5 sesiones (2h c/u)</li>
+            <li>Material tope gama</li>
+            <li>Vídeo coaching</li>
+          </ul>
+          <a href="#reserva" class="inline-block bg-teal-500 text-white px-5 py-2 rounded-lg hover:bg-teal-600 transition">Reservar</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reserva Rápida -->
+  <section id="reserva" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6 max-w-lg">
+      <h2 class="text-4xl font-bold mb-6 text-center text-teal-500">Reserva Rápida</h2>
+      <form class="bg-white p-6 rounded-lg shadow-lg space-y-4">
+        <div>
+          <label class="block font-semibold mb-1">Nombre</label>
+          <input type="text" class="w-full border rounded-lg px-3 py-2" placeholder="Tu nombre">
+        </div>
+        <div>
+          <label class="block font-semibold mb-1">Email</label>
+          <input type="email" class="w-full border rounded-lg px-3 py-2" placeholder="tu@ejemplo.com">
+        </div>
+        <div>
+          <label class="block font-semibold mb-1">Fecha</label>
+          <input type="date" class="w-full border rounded-lg px-3 py-2">
+        </div>
+        <div>
+          <label class="block font-semibold mb-1">Deporte</label>
+          <select class="w-full border rounded-lg px-3 py-2">
+            <option>Kitesurf</option>
+            <option>Wingfoil</option>
+            <option>Surf</option>
+          </select>
+        </div>
+        <div class="text-sm text-gray-600">
+          <input type="checkbox" id="gdpr"> <label for="gdpr">Acepto el tratamiento de datos según RGPD.</label>
+        </div>
+        <button type="submit" class="w-full bg-teal-500 text-white px-5 py-2 rounded-lg hover:bg-teal-600 transition">Enviar Reserva</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="py-16">
+    <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div>
+        <h2 class="text-4xl font-bold mb-4 text-teal-500">Contacto</h2>
+        <p class="mb-2"><strong>Teléfono:</strong> +34 600 123 456</p>
+        <p class="mb-2"><strong>Email:</strong> info@mamacocha.com</p>
+        <p class="mb-4"><strong>Dirección:</strong> Playa de Los Lances, Tarifa, España</p>
+        <div class="mb-4">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18..." width="100%" height="250" style="border:0; border-radius:8px;" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="flex space-x-4">
+          <a href="#" class="text-teal-500 hover:text-teal-700">Instagram</a>
+          <a href="#" class="text-teal-500 hover:text-teal-700">Facebook</a>
+          <a href="#" class="text-teal-500 hover:text-teal-700">YouTube</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-400 py-6">
+    <div class="container mx-auto px-6 text-center">
+      <p>&copy; 2025 Mamacocha Tarifa Watersports. Todos los derechos reservados.</p>
+      <div class="mt-2 space-x-4">
+        <a href="#" class="hover:text-white">Aviso Legal</a>
+        <a href="#" class="hover:text-white">Política de Privacidad</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const btn = document.getElementById('btn-menu');
+    const nav = document.querySelector('nav');
+    btn.addEventListener('click', () => { nav.classList.toggle('hidden'); });
+    // ScrollReveal animations
+    ScrollReveal().reveal('section', { distance: '50px', duration: 800, easing: 'ease-in-out', origin: 'bottom', interval: 200 });
+  </script>
+  <script src="https://unpkg.com/glightbox/dist/js/glightbox.min.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script>
+    const lightbox = GLightbox({ selector: '.glightbox' });
+    const swiper = new Swiper('.swiper-container', {
+      loop: true,
+      pagination: { el: '.swiper-pagination', clickable: true },
+      speed: 600
+    });
+  </script>
+</body>
+</html>

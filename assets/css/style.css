@@ -1,0 +1,10 @@
+/* Custom Styles */
+body { font-family: 'Open Sans', sans-serif; }
+h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; }
+
+/* Wave SVG separators */
+.wave { position: relative; }
+.wave svg { display: block; width: calc(100% + 1.3px); }
+
+/* Lightbox overrides if needed */
+.glightbox-clean .gslide-description { color: #fff; }
