@@ -3,261 +3,656 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mamacocha Tarifa Watersports</title>
+  <title>Mamacocha Tarifa - Instructor de Kitesurf & Watersports</title>
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- ScrollReveal -->
-  <script src="https://unpkg.com/scrollreveal"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- GLightbox -->
   <link rel="stylesheet" href="https://unpkg.com/glightbox/dist/css/glightbox.min.css"/>
+  <!-- Swiper -->
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'sans': ['Inter', 'sans-serif'],
+            'serif': ['Playfair Display', 'serif'],
+          },
+          colors: {
+            'ocean': {
+              50: '#f0fdfa',
+              100: '#ccfbf1',
+              200: '#99f6e4',
+              300: '#5eead4',
+              400: '#2dd4bf',
+              500: '#14b8a6',
+              600: '#0d9488',
+              700: '#0f766e',
+              800: '#115e59',
+              900: '#134e4a',
+            },
+            'sand': {
+              50: '#fefce8',
+              100: '#fef9c3',
+              200: '#fef08a',
+              300: '#fde047',
+              400: '#facc15',
+              500: '#eab308',
+              600: '#ca8a04',
+              700: '#a16207',
+              800: '#854d0e',
+              900: '#713f12',
+            }
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'wave': 'wave 2s ease-in-out infinite',
+          }
+        }
+      }
+    }
+  </script>
+  
   <style>
-    body { font-family: 'Open Sans', sans-serif; }
-    h1,h2,h3,h4 { font-family: 'Montserrat', sans-serif; }
-    /* Wave SVG separators */
-    .wave { position: relative; }
-    .wave svg { display: block; width: calc(100% + 1.3px); }
+    body { 
+      font-family: 'Inter', sans-serif; 
+      scroll-behavior: smooth;
+    }
+    h1, h2, h3, h4 { 
+      font-family: 'Playfair Display', serif; 
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+    
+    @keyframes wave {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(10deg); }
+    }
+    
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .gradient-text {
+      background: linear-gradient(45deg, #f59e0b, #f97316, #eab308);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 800;
+      text-shadow: 0 0 30px rgba(249, 115, 22, 0.5);
+    }
+    
+    .hero-gradient {
+      background: linear-gradient(135deg, rgba(249, 158, 11, 0.9), rgba(249, 151, 22, 0.8), rgba(234, 179, 8, 0.7));
+    }
+    
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, #f59e0b, #f97316);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(249, 115, 22, 0.3);
+    }
+    
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s;
+    }
+    
+    .btn-primary:hover::before {
+      left: 100%;
+    }
+  </style>
+  <style>
+    /* Forzar visibilidad del texto */
+    * {
+      color: inherit !important;
+    }
+    
+    body {
+      color: #222 !important;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      color: #1f2937 !important;
+    }
+    
+    .text-blue-600 {
+      color: #f59e0b !important;
+    }
+    
+    .text-gray-600 {
+      color: #4b5563 !important;
+    }
+    
+    .text-gray-700 {
+      color: #374151 !important;
+    }
+    
+    .text-gray-800 {
+      color: #1f2937 !important;
+    }
+    
+    .text-white {
+      color: #ffffff !important;
+    }
+    
+    .text-yellow-600 {
+      color: #f97316 !important;
+    }
+    
+    .text-amber-600 {
+      color: #f59e0b !important;
+    }
+    
+    /* Glass effect */
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    /* Card hover effects */
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Gradient text */
+    /* .gradient-text {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    } */
+    
+    /* Floating animation */
+    .floating {
+      animation: floating 3s ease-in-out infinite;
+    }
+    
+    @keyframes floating {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    /* Button styles */
+    .btn-primary {
+      background: linear-gradient(135deg, #f59e0b, #f97316);
+      color: white !important;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(249, 115, 22, 0.3);
+    }
+    
+    /* Ensure all text is visible */
+    p, span, div, li, a {
+      color: inherit !important;
+    }
+    
+    /* Specific fixes for sections */
+    #inicio * {
+      color: white !important;
+    }
+    
+    #sobre h2 {
+      color: #f59e0b !important;
+    }
+    
+    #servicios h2 {
+      color: #f97316 !important;
+    }
+    
+    #galeria h2 {
+      color: #f97316 !important;
+    }
+    
+    #testimonios h2 {
+      color: #f59e0b !important;
+    }
+    
+    #precios h2 {
+      color: #f97316 !important;
+    }
+    
+    #reserva h2 {
+      color: #f59e0b !important;
+    }
+  </style>
+  <style>
+    body, body * { color: #222 !important; }
   </style>
 </head>
-<body class="bg-white text-gray-800 leading-relaxed">
+<body class="bg-gray-50 text-gray-800 leading-relaxed">
   <!-- Header -->
-  <header class="fixed w-full bg-white bg-opacity-75 backdrop-blur z-50">
-    <div class="container mx-auto flex items-center justify-between py-4 px-6">
-      <a href="#inicio" class="text-2xl font-bold text-teal-500">Mamacocha Tarifa Watersports</a>
-      <nav class="hidden md:flex space-x-6">
-        <a href="#inicio" class="hover:text-teal-500">Inicio</a>
-        <a href="#sobre" class="hover:text-teal-500">Sobre</a>
-        <a href="#servicios" class="hover:text-teal-500">Servicios</a>
-        <a href="#galeria" class="hover:text-teal-500">Galería</a>
-        <a href="#testimonios" class="hover:text-teal-500">Testimonios</a>
-        <a href="#precios" class="hover:text-teal-500">Precios</a>
-        <a href="#reserva" class="hover:text-teal-500">Reserva</a>
-        <a href="#contacto" class="hover:text-teal-500">Contacto</a>
-      </nav>
-      <a href="#reserva" class="hidden md:inline-block bg-teal-500 text-white px-5 py-2 rounded-lg hover:bg-teal-600 transition">Reserva tu clase</a>
-      <button class="md:hidden text-gray-700 focus:outline-none" id="btn-menu">☰</button>
+  <header class="fixed w-full z-50 transition-all duration-300" id="header">
+    <div class="glass-effect">
+      <div class="container mx-auto flex items-center justify-between py-4 px-6">
+        <a href="#inicio" class="flex items-center space-x-3 group">
+          <div class="w-10 h-10 bg-orange-400 rounded-full flex items-center justify-center">
+            <i class="fas fa-water text-white text-lg"></i>
+          </div>
+          <span class="text-2xl font-bold text-orange-600 group-hover:scale-105 transition-transform">
+            Mamacocha Tarifa
+          </span>
+        </a>
+        
+        <nav class="hidden md:flex space-x-8">
+          <a href="#inicio" class="text-gray-700 hover:text-orange-600 transition-colors font-medium">Inicio</a>
+          <a href="#sobre" class="text-gray-700 hover:text-orange-600 transition-colors font-medium">Sobre Mí</a>
+          <a href="#servicios" class="text-gray-700 hover:text-orange-600 transition-colors font-medium">Clases</a>
+          <a href="#testimonios" class="text-gray-700 hover:text-orange-600 transition-colors font-medium">Testimonios</a>
+          <a href="#contacto" class="text-gray-700 hover:text-orange-600 transition-colors font-medium">Contacto</a>
+        </nav>
+        
+        <div class="hidden md:flex items-center space-x-4">
+          <a href="tel:+34600123456" class="text-gray-600 hover:text-orange-600 transition-colors">
+            <i class="fas fa-phone"></i>
+          </a>
+          <a href="#reserva" class="btn-primary text-white px-6 py-3 rounded-full font-semibold">
+            Reserva Ahora
+          </a>
+        </div>
+        
+        <button class="md:hidden text-gray-700 focus:outline-none" id="btn-menu">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div class="md:hidden hidden glass-effect" id="mobile-menu">
+      <div class="container mx-auto px-6 py-4">
+        <nav class="flex flex-col space-y-4">
+          <a href="#inicio" class="text-gray-700 hover:text-orange-600 font-medium transition-colors">Inicio</a>
+          <a href="#sobre" class="text-gray-700 hover:text-orange-600 font-medium transition-colors">Sobre Mí</a>
+          <a href="#servicios" class="text-gray-700 hover:text-orange-600 font-medium transition-colors">Clases</a>
+          <a href="#testimonios" class="text-gray-700 hover:text-orange-600 font-medium transition-colors">Testimonios</a>
+          <a href="#contacto" class="text-gray-700 hover:text-orange-600 font-medium transition-colors">Contacto</a>
+          <a href="#reserva" class="btn-primary text-white px-6 py-3 rounded-full font-semibold text-center mt-4">
+            Reserva Ahora
+          </a>
+        </nav>
+      </div>
     </div>
   </header>
 
   <!-- Hero -->
-  <section id="inicio" class="min-h-screen bg-cover bg-center" style="background-image: url('https://source.unsplash.com/1600x900/?kitesurf,beach');">
-    <div class="bg-gradient-to-b from-teal-500/60 to-white/20 min-h-screen flex items-center justify-center">
-      <div class="text-center px-4">
-        <h1 class="text-5xl md:text-7xl font-bold text-white drop-shadow-lg">Clases de Kitesurf, Wingfoil &amp; Surf</h1>
-        <p class="mt-4 text-xl text-white">Vive la experiencia de Tarifa con los mejores instructores</p>
-        <a href="#reserva" class="mt-6 inline-block bg-white text-teal-600 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition">Empieza hoy</a>
+  <section id="inicio" class="relative min-h-screen bg-cover bg-center overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');">
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-900/40 via-teal-700/30 to-amber-500/50"></div>
+    
+    <!-- Floating Elements -->
+    <div class="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full animate-float hidden md:block"></div>
+    <div class="absolute top-40 right-20 w-16 h-16 bg-white/10 rounded-full animate-float" style="animation-delay: 2s;"></div>
+    <div class="absolute bottom-40 left-20 w-12 h-12 bg-white/10 rounded-full animate-float" style="animation-delay: 4s;"></div>
+    
+    <!-- Content -->
+    <div class="relative z-10 text-center text-white px-6">
+      <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight" data-aos="fade-up">
+        Kitesurf, Surf<br>
+        <span class="gradient-text">& Mamacocha</span>
+      </h1>
+      <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="200">
+        Instructor certificado IKO especializado en deportes acuáticos. Clases personalizadas de kitesurf, surf y wingfoil en Tarifa.
+      </p>
+      <div class="flex flex-col md:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="400">
+        <a href="#contacto" class="btn-primary px-8 py-4 rounded-full text-lg font-semibold hover:shadow-lg transition-all">
+          Reservar Clase
+        </a>
+        <a href="#sobre" class="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-orange-600 transition-all">
+          Conoce Más
+        </a>
       </div>
+    </div>
+    
+    <!-- Wave Separator -->
+    <div class="absolute bottom-0 left-0 w-full">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" class="w-full h-20">
+        <path fill="#f9fafb" fill-opacity="1" d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,64C960,75,1056,85,1152,80C1248,75,1344,53,1392,42.7L1440,32L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z"></path>
+      </svg>
     </div>
   </section>
 
-  <!-- Sobre Mamacocha -->
-  <section id="sobre" class="py-16">
-    <div class="container mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold mb-4 text-teal-500">Sobre Mamacocha</h2>
-      <p class="max-w-2xl mx-auto mb-8">En Mamacocha fusionamos pasión, seguridad y diversión para ofrecerte clases de kitesurf, wingfoil y surf en el paraíso de Tarifa.</p>
-      <div class="flex justify-center space-x-8">
-        <div class="text-center">
-          <div class="text-5xl">🏄‍♀️</div>
-          <p class="mt-2 font-semibold">Surf</p>
+  <!-- Sobre Mí -->
+  <section id="sobre" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-4xl font-bold mb-6 text-amber-600">Sobre Mí</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Soy instructor certificado IKO con pasión por enseñar kitesurf en las mejores condiciones de viento de Tarifa.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div data-aos="fade-right">
+          <img src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+               alt="Surf en Tarifa - Instructor Profesional" 
+               class="rounded-2xl shadow-lg w-full">
         </div>
-        <div class="text-center">
-          <div class="text-5xl">🪁</div>
-          <p class="mt-2 font-semibold">Kitesurf</p>
-        </div>
-        <div class="text-center">
-          <div class="text-5xl">🌊</div>
-          <p class="mt-2 font-semibold">Wingfoil</p>
+        
+        <div data-aos="fade-left">
+          <h3 class="text-3xl font-bold mb-6 text-gray-800">Bienvenido a Mamacocha Tarifa</h3>
+          <p class="text-gray-600 mb-8 leading-relaxed text-lg">
+            Soy tu instructor personal de deportes acuáticos en Tarifa. Con más de 5 años de experiencia y certificación IKO, 
+            te ofrezco clases personalizadas de <strong>kitesurf</strong>, <strong>surf</strong> y <strong>wingfoil</strong> 
+            adaptadas a tu ritmo y nivel. Mi filosofía se basa en tres pilares fundamentales:
+          </p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div class="text-center bg-gradient-to-br from-amber-50 to-yellow-100 rounded-xl p-6 border border-amber-200">
+              <i class="fas fa-shield-alt text-amber-600 text-3xl mb-3"></i>
+              <h4 class="font-bold text-gray-800 mb-2">Seguridad</h4>
+              <p class="text-gray-600 text-sm">Protocolos estrictos y equipos certificados</p>
+            </div>
+            <div class="text-center bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl p-6 border border-orange-200">
+              <i class="fas fa-smile text-orange-600 text-3xl mb-3"></i>
+              <h4 class="font-bold text-gray-800 mb-2">Diversión</h4>
+              <p class="text-gray-600 text-sm">Aprender disfrutando cada momento</p>
+            </div>
+            <div class="text-center bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-xl p-6 border border-yellow-200">
+              <i class="fas fa-chart-line text-yellow-600 text-3xl mb-3"></i>
+              <h4 class="font-bold text-gray-800 mb-2">Progreso</h4>
+              <p class="text-gray-600 text-sm">Avance garantizado en cada clase</p>
+            </div>
+          </div>
+          
+          <div class="grid grid-cols-2 gap-6 mb-8">
+            <div class="text-center bg-white rounded-xl p-6 shadow-md border border-amber-200">
+              <div class="text-4xl font-bold text-amber-600 mb-2">+200</div>
+              <div class="text-gray-600 font-medium">Alumnos Satisfechos</div>
+            </div>
+            <div class="text-center bg-white rounded-xl p-6 shadow-md border border-orange-200">
+              <div class="text-4xl font-bold text-orange-600 mb-2">5+</div>
+              <div class="text-gray-600 font-medium">Años de Experiencia</div>
+            </div>
+          </div>
+          
+          <div class="flex items-center justify-center space-x-6 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-xl p-6 shadow-lg">
+            <i class="fas fa-certificate text-3xl"></i>
+            <div>
+              <h4 class="font-bold text-lg">Instructor Certificado IKO</h4>
+              <p class="opacity-90">International Kiteboarding Organization</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Servicios -->
-  <section id="servicios" class="py-16 bg-gray-50">
+  <section id="servicios" class="py-20 bg-white">
     <div class="container mx-auto px-6">
-      <h2 class="text-4xl font-bold mb-8 text-center text-teal-500">Nuestros Servicios</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Card Kitesurf -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-          <img src="https://source.unsplash.com/600x400/?kitesurf" alt="Kitesurf" class="w-full h-48 object-cover">
-          <div class="p-6">
-            <h3 class="text-2xl font-semibold mb-2">Kitesurf</h3>
-            <p>Niveles: Iniciación | Intermedio | Avanzado</p>
-            <p>Duración: 2h por sesión</p>
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-4xl font-bold mb-6 text-orange-600">Mis Clases</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Ofrezco clases personalizadas de kitesurf, surf y wingfoil para todos los niveles, desde principiantes hasta avanzados.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <!-- Kitesurf -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 text-center card-hover border-2 border-amber-500" data-aos="fade-up" data-aos-delay="100">
+          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-amber-500 text-white px-4 py-1 rounded-full text-sm font-medium">
+            Más Popular
           </div>
+          <div class="w-16 h-16 bg-amber-100 rounded-full mx-auto mb-6 flex items-center justify-center">
+            <i class="fas fa-wind text-amber-600 text-2xl"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-4 text-gray-800">Kitesurf</h3>
+          <p class="text-gray-600 mb-6">
+            Aprende o perfecciona tu técnica de kitesurf con el mejor instructor de Tarifa. Desde nivel básico hasta trucos avanzados.
+          </p>
+          <div class="text-3xl font-bold text-amber-600 mb-2">€75</div>
+          <div class="text-gray-500 text-sm mb-6">2 horas / Material incluido</div>
+          <a href="#contacto" class="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white w-full py-3 rounded-lg font-medium transition-all">
+            Reservar
+          </a>
         </div>
-        <!-- Card Wingfoil -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-          <img src="https://source.unsplash.com/600x400/?wingfoil" alt="Wingfoil" class="w-full h-48 object-cover">
-          <div class="p-6">
-            <h3 class="text-2xl font-semibold mb-2">Wingfoil</h3>
-            <p>Niveles: Iniciación | Intermedio</p>
-            <p>Duración: 2h por sesión</p>
+        
+        <!-- Surf -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 text-center card-hover border border-orange-300" data-aos="fade-up" data-aos-delay="200">
+          <div class="w-16 h-16 bg-orange-100 rounded-full mx-auto mb-6 flex items-center justify-center">
+            <i class="fas fa-water text-orange-600 text-2xl"></i>
           </div>
+          <h3 class="text-xl font-bold mb-4 text-gray-800">Surf</h3>
+          <p class="text-gray-600 mb-6">
+            Domina las olas con clases de surf adaptadas a tu nivel. Perfecto para principiantes y surfistas que quieren mejorar.
+          </p>
+          <div class="text-3xl font-bold text-orange-600 mb-2">€65</div>
+          <div class="text-gray-500 text-sm mb-6">2 horas / Material incluido</div>
+          <a href="#contacto" class="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white w-full py-3 rounded-lg font-medium transition-all">
+            Reservar
+          </a>
         </div>
-        <!-- Card Surf -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-          <img src="https://source.unsplash.com/600x400/?surf" alt="Surf" class="w-full h-48 object-cover">
-          <div class="p-6">
-            <h3 class="text-2xl font-semibold mb-2">Surf</p>
-            <p>Niveles: Iniciación | Intermedio</p>
-            <p>Duración: 2h por sesión</p>
+        
+        <!-- Wingfoil -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 text-center card-hover border border-yellow-300" data-aos="fade-up" data-aos-delay="300">
+          <div class="w-16 h-16 bg-yellow-100 rounded-full mx-auto mb-6 flex items-center justify-center">
+            <i class="fas fa-paper-plane text-yellow-600 text-2xl"></i>
           </div>
+          <h3 class="text-xl font-bold mb-4 text-gray-800">Wingfoil</h3>
+          <p class="text-gray-600 mb-6">
+            Descubre el deporte más innovador: wingfoil. Una experiencia única que combina viento, agua y la sensación de volar.
+          </p>
+          <div class="text-3xl font-bold text-yellow-600 mb-2">€85</div>
+          <div class="text-gray-500 text-sm mb-6">2 horas / Material incluido</div>
+          <a href="#contacto" class="bg-gradient-to-r from-yellow-500 to-yellow-600 hover:from-yellow-600 hover:to-yellow-700 text-white w-full py-3 rounded-lg font-medium transition-all">
+            Reservar
+          </a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Galería -->
-  <section id="galeria" class="py-16 wave">
-    <div class="wave">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 80"><path fill="#F4D29B" fill-opacity="1" d="M0,32L48,58.7C96,85,192,139,288,154.7C384,171,480,149,576,138.7C672,128,768,128,864,133.3C960,139,1056,149,1152,149.3C1248,149,1344,139,1392,133.3L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
-    </div>
-    <div class="container mx-auto px-6">
-      <h2 class="text-4xl font-bold mb-8 text-center text-teal-500">Galería</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        <a href="https://source.unsplash.com/1200x900/?beach,tarifa" class="glightbox">
-          <img src="https://source.unsplash.com/400x300/?beach,tarifa" class="w-full h-48 object-cover rounded-lg" alt="">
-        </a>
-        <a href="https://source.unsplash.com/1200x900/?kite,tarifa" class="glightbox">
-          <img src="https://source.unsplash.com/400x300/?kite,tarifa" class="w-full h-48 object-cover rounded-lg" alt="">
-        </a>
-        <a href="https://source.unsplash.com/1200x900/?surf,tarifa" class="glightbox">
-          <img src="https://source.unsplash.com/400x300/?surf,tarifa" class="w-full h-48 object-cover rounded-lg" alt="">
-        </a>
-        <a href="https://source.unsplash.com/1200x900/?wingfoil,tarifa" class="glightbox">
-          <img src="https://source.unsplash.com/400x300/?wingfoil,tarifa" class="w-full h-48 object-cover rounded-lg" alt="">
-        </a>
-        <a href="https://source.unsplash.com/1200x900/?ocean,tarifa" class="glightbox">
-          <img src="https://source.unsplash.com/400x300/?ocean,tarifa" class="w-full h-48 object-cover rounded-lg" alt="">
-        </a>
-        <a href="https://source.unsplash.com/1200x900/?sunset,beach" class="glightbox">
-          <img src="https://source.unsplash.com/400x300/?sunset,beach" class="w-full h-48 object-cover rounded-lg" alt="">
-        </a>
+      
+      <div class="text-center mt-12" data-aos="fade-up" data-aos-delay="400">
+        <p class="text-gray-600 mb-4">
+          <i class="fas fa-check text-amber-600 mr-2"></i>
+          Todas las clases incluyen material completo y seguro
+        </p>
+        <p class="text-gray-600 mb-4">
+          <i class="fas fa-check text-orange-600 mr-2"></i>
+          Grupos reducidos para atención personalizada
+        </p>
+        <p class="text-gray-600">
+          <i class="fas fa-check text-yellow-600 mr-2"></i>
+          Instructor certificado IKO con más de 5 años de experiencia
+        </p>
       </div>
     </div>
   </section>
 
   <!-- Testimonios -->
-  <section id="testimonios" class="py-16 bg-gray-50">
-    <div class="container mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold mb-8 text-teal-500">Testimonios</h2>
-      <div class="swiper-container max-w-xl mx-auto">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide p-6 bg-white rounded-lg shadow-lg">
-            <p class="italic">"¡La mejor experiencia en Tarifa! Instructores muy profesionales y divertidos."</p>
-            <p class="mt-4 font-semibold">— María G.</p>
-          </div>
-          <div class="swiper-slide p-6 bg-white rounded-lg shadow-lg">
-            <p class="italic">"Gran servicio y ambiente increíble. ¡Repetiré seguro!"</p>
-            <p class="mt-4 font-semibold">— Juan P.</p>
-          </div>
-        </div>
-        <div class="swiper-pagination mt-4"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Precios & Paquetes -->
-  <section id="precios" class="py-16">
+  <section id="testimonios" class="py-20 bg-gray-50">
     <div class="container mx-auto px-6">
-      <h2 class="text-4xl font-bold mb-8 text-center text-teal-500">Precios &amp; Paquetes</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="border rounded-lg p-6 text-center">
-          <h3 class="text-2xl font-semibold mb-4">Básico</h3>
-          <p class="text-3xl font-bold mb-4">€60</p>
-          <ul class="mb-6">
-            <li>1 sesión (2h)</li>
-            <li>Material incluido</li>
-            <li>Seguro básico</li>
-          </ul>
-          <a href="#reserva" class="inline-block bg-teal-500 text-white px-5 py-2 rounded-lg hover:bg-teal-600 transition">Reservar</a>
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-4xl font-bold mb-6 text-amber-600">Lo que Dicen Mis Alumnos</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Testimonios reales de alumnos que han aprendido kitesurf, surf y wingfoil conmigo:
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div class="bg-white rounded-2xl p-8 shadow-lg card-hover" data-aos="fade-up" data-aos-delay="100">
+          <div class="flex items-center justify-center space-x-1 mb-4">
+            <i class="fas fa-star text-yellow-600"></i>
+            <i class="fas fa-star text-yellow-600"></i>
+            <i class="fas fa-star text-yellow-600"></i>
+            <i class="fas fa-star text-yellow-600"></i>
+            <i class="fas fa-star text-yellow-600"></i>
+          </div>
+          <p class="text-gray-700 mb-6 italic">
+            "Excelente instructor, muy paciente y profesional. Empecé con kitesurf y ahora también practico wingfoil. ¡Totalmente recomendado!"
+          </p>
+          <div class="text-center">
+            <h4 class="font-bold text-gray-800">María González</h4>
+            <p class="text-gray-600 text-sm">Madrid, España</p>
+          </div>
         </div>
-        <div class="border-2 border-teal-500 rounded-lg p-6 text-center">
-          <h3 class="text-2xl font-semibold mb-4">Intensivo</h3>
-          <p class="text-3xl font-bold mb-4">€180</p>
-          <ul class="mb-6">
-            <li>3 sesiones (2h c/u)</li>
-            <li>Material premium</li>
-            <li>Seguro completo</li>
-          </ul>
-          <a href="#reserva" class="inline-block bg-teal-500 text-white px-5 py-2 rounded-lg hover:bg-teal-600 transition">Reservar</a>
-        </div>
-        <div class="border rounded-lg p-6 text-center">
-          <h3 class="text-2xl font-semibold mb-4">Premium</h3>
-          <p class="text-3xl font-bold mb-4">€300</p>
-          <ul class="mb-6">
-            <li>5 sesiones (2h c/u)</li>
-            <li>Material tope gama</li>
-            <li>Vídeo coaching</li>
-          </ul>
-          <a href="#reserva" class="inline-block bg-teal-500 text-white px-5 py-2 rounded-lg hover:bg-teal-600 transition">Reservar</a>
+        
+        <div class="bg-white rounded-2xl p-8 shadow-lg card-hover" data-aos="fade-up" data-aos-delay="200">
+          <div class="flex items-center justify-center space-x-1 mb-4">
+            <i class="fas fa-star text-yellow-600"></i>
+            <i class="fas fa-star text-yellow-600"></i>
+            <i class="fas fa-star text-yellow-600"></i>
+            <i class="fas fa-star text-yellow-600"></i>
+            <i class="fas fa-star text-yellow-600"></i>
+          </div>
+          <p class="text-gray-700 mb-6 italic">
+            "Las mejores clases de surf que he tenido. Muy buen ambiente y método de enseñanza. Ahora quiero probar el kitesurf también!"
+          </p>
+          <div class="text-center">
+            <h4 class="font-bold text-gray-800">Carlos Ruiz</h4>
+            <p class="text-gray-600 text-sm">Barcelona, España</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Reserva Rápida -->
-  <section id="reserva" class="py-16 bg-gray-50">
-    <div class="container mx-auto px-6 max-w-lg">
-      <h2 class="text-4xl font-bold mb-6 text-center text-teal-500">Reserva Rápida</h2>
-      <form class="bg-white p-6 rounded-lg shadow-lg space-y-4">
-        <div>
-          <label class="block font-semibold mb-1">Nombre</label>
-          <input type="text" class="w-full border rounded-lg px-3 py-2" placeholder="Tu nombre">
-        </div>
-        <div>
-          <label class="block font-semibold mb-1">Email</label>
-          <input type="email" class="w-full border rounded-lg px-3 py-2" placeholder="tu@ejemplo.com">
-        </div>
-        <div>
-          <label class="block font-semibold mb-1">Fecha</label>
-          <input type="date" class="w-full border rounded-lg px-3 py-2">
-        </div>
-        <div>
-          <label class="block font-semibold mb-1">Deporte</label>
-          <select class="w-full border rounded-lg px-3 py-2">
-            <option>Kitesurf</option>
-            <option>Wingfoil</option>
-            <option>Surf</option>
-          </select>
-        </div>
-        <div class="text-sm text-gray-600">
-          <input type="checkbox" id="gdpr"> <label for="gdpr">Acepto el tratamiento de datos según RGPD.</label>
-        </div>
-        <button type="submit" class="w-full bg-teal-500 text-white px-5 py-2 rounded-lg hover:bg-teal-600 transition">Enviar Reserva</button>
-      </form>
     </div>
   </section>
 
   <!-- Contacto -->
-  <section id="contacto" class="py-16">
-    <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8">
-      <div>
-        <h2 class="text-4xl font-bold mb-4 text-teal-500">Contacto</h2>
-        <p class="mb-2"><strong>Teléfono:</strong> +34 600 123 456</p>
-        <p class="mb-2"><strong>Email:</strong> info@mamacocha.com</p>
-        <p class="mb-4"><strong>Dirección:</strong> Playa de Los Lances, Tarifa, España</p>
-        <div class="mb-4">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18..." width="100%" height="250" style="border:0; border-radius:8px;" allowfullscreen loading="lazy"></iframe>
-        </div>
-        <div class="flex space-x-4">
-          <a href="#" class="text-teal-500 hover:text-teal-700">Instagram</a>
-          <a href="#" class="text-teal-500 hover:text-teal-700">Facebook</a>
-          <a href="#" class="text-teal-500 hover:text-teal-700">YouTube</a>
+  <section id="contacto" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-4xl font-bold mb-6 text-orange-600">Reserva Tu Clase</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          ¿Listo para aprender kitesurf? Contáctame y reserva tu clase personalizada.
+        </p>
+      </div>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <!-- Información de Contacto -->
+        <div class="space-y-8" data-aos="fade-left">
+          <div class="bg-orange-500 text-white rounded-2xl p-8">
+            <h3 class="text-2xl font-bold mb-6">Información de Contacto</h3>
+            <div class="space-y-6">
+              <div class="flex items-start space-x-4">
+                <i class="fas fa-phone text-2xl mt-1"></i>
+                <div>
+                  <h4 class="font-semibold text-lg">Teléfono</h4>
+                  <p class="opacity-90">+34 600 123 456</p>
+                  <p class="text-sm opacity-75">Disponible 9:00 - 19:00</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start space-x-4">
+                <i class="fas fa-envelope text-2xl mt-1"></i>
+                <div>
+                  <h4 class="font-semibold text-lg">Email</h4>
+                  <p class="opacity-90">info@mamacochatarifakitesurf.com</p>
+                  <p class="text-sm opacity-75">Respuesta en 24h</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start space-x-4">
+                <i class="fas fa-map-marker-alt text-2xl mt-1"></i>
+                <div>
+                  <h4 class="font-semibold text-lg">Ubicación</h4>
+                  <p class="opacity-90">Playa de Los Lances</p>
+                  <p class="text-sm opacity-75">Tarifa, Cádiz, España</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <h3 class="text-2xl font-bold mb-6 text-gray-800">Sígueme</h3>
+            <div class="flex space-x-4">
+              <a href="#" class="text-orange-600 hover:text-orange-700 transition-colors text-2xl">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="text-orange-600 hover:text-orange-700 transition-colors text-2xl">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+              <a href="#" class="text-orange-600 hover:text-orange-700 transition-colors text-2xl">
+                <i class="fab fa-facebook"></i>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-800 text-gray-400 py-6">
-    <div class="container mx-auto px-6 text-center">
-      <p>&copy; 2025 Mamacocha Tarifa Watersports. Todos los derechos reservados.</p>
-      <div class="mt-2 space-x-4">
-        <a href="#" class="hover:text-white">Aviso Legal</a>
-        <a href="#" class="hover:text-white">Política de Privacidad</a>
+  <footer class="bg-gradient-to-r from-amber-600 to-orange-600 text-white py-12">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4">Mamacocha Tarifa</h3>
+          <p class="text-amber-100 mb-4">
+            Tu instructor personal de kitesurf, surf y wingfoil en Tarifa. Clases adaptadas a tu nivel con la mejor atención personalizada.
+          </p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-amber-200 hover:text-white transition-colors">
+              <i class="fab fa-instagram text-xl"></i>
+            </a>
+            <a href="#" class="text-amber-200 hover:text-white transition-colors">
+              <i class="fab fa-facebook text-xl"></i>
+            </a>
+            <a href="#" class="text-amber-200 hover:text-white transition-colors">
+              <i class="fab fa-whatsapp text-xl"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Servicios</h4>
+          <ul class="space-y-2 text-amber-100">
+            <li><a href="#servicios" class="hover:text-white transition-colors">Clases de Kitesurf</a></li>
+            <li><a href="#servicios" class="hover:text-white transition-colors">Clases de Surf</a></li>
+            <li><a href="#servicios" class="hover:text-white transition-colors">Clases de Wingfoil</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Contacto</h4>
+          <div class="space-y-2 text-amber-100">
+            <p><i class="fas fa-phone mr-2"></i> +34 123 456 789</p>
+            <p><i class="fas fa-envelope mr-2"></i> info@mamacochatarifakitesurf.com</p>
+            <p><i class="fas fa-map-marker-alt mr-2"></i> Tarifa, Cádiz, España</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="border-t border-amber-400 mt-8 pt-8 text-center text-amber-100">
+        <p>&copy; 2024 Mamacocha Tarifa. Todos los derechos reservados.</p>
       </div>
     </div>
   </footer>
@@ -265,18 +660,91 @@
   <script>
     const btn = document.getElementById('btn-menu');
     const nav = document.querySelector('nav');
-    btn.addEventListener('click', () => { nav.classList.toggle('hidden'); });
-    // ScrollReveal animations
-    ScrollReveal().reveal('section', { distance: '50px', duration: 800, easing: 'ease-in-out', origin: 'bottom', interval: 200 });
+
+    btn.addEventListener('click', () => {
+      nav.classList.toggle('hidden');
+    });
+
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('header');
+      if (window.scrollY > 100) {
+        header.classList.add('bg-white', 'shadow-lg');
+      } else {
+        header.classList.remove('bg-white', 'shadow-lg');
+      }
+    });
   </script>
+
+  <!-- AOS Animation Library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- GLightbox -->
   <script src="https://unpkg.com/glightbox/dist/js/glightbox.min.js"></script>
+  <!-- Swiper -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <!-- ScrollReveal -->
+  <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
+
   <script>
-    const lightbox = GLightbox({ selector: '.glightbox' });
-    const swiper = new Swiper('.swiper-container', {
+    // Initialize AOS
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 100
+    });
+
+    // Initialize GLightbox
+    const lightbox = GLightbox({
+      touchNavigation: true,
       loop: true,
-      pagination: { el: '.swiper-pagination', clickable: true },
-      speed: 600
+      autoplayVideos: true
+    });
+
+    // Initialize Swiper for testimonials
+    const swiper = new Swiper('.swiper-container', {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        }
+      }
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Form submission
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('¡Gracias por tu interés! Nos pondremos en contacto contigo pronto.');
     });
   </script>
 </body>
